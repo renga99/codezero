@@ -19,12 +19,8 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-<link rel="stylesheet" href="jjsonviewer.css">
 
 <style type="text/css">
-@import
-	url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
-
 .navbar {
 	margin-bottom: 0 !important;
 }
@@ -49,10 +45,6 @@ html, body {
 .fill {
 	height: 100%;
 	min-height: 100%;
-}
-
-.navbar-default .navbar-brand {
-	color: #000;
 }
 </style>
 </head>
@@ -112,13 +104,17 @@ html, body {
 					style="width: 200px; margin-left: 10px"> <input type="text"
 					placeholder="db_name ex:sdbcab02" class="form-control"
 					style="width: 200px;">
-
-				<div class="btn-group btn-toggle" style="margin-left: 15px">
-					<button class="btn btn-xs btn-default">ON</button>
-					<button class="btn btn-xs btn-primary active">OFF</button>
-					<label style="margin-left: 5px">Scrapping mode</label>
-				</div>
 			</form>
+			<div class="btn-group btn-toggle"
+				style="margin-left: 15px; margin-top: 10px">
+				<button class="btn btn-xs btn-default">ON</button>
+				<button class="btn btn-xs btn-primary active">OFF</button>
+				<label style="margin-left: 5px">Scrapping mode</label>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>
+						Logout</a></li>
+			</ul>
 		</div>
 
 	</div>
@@ -130,7 +126,8 @@ html, body {
 					<h3 class="">
 						Projects
 						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#myModal">New Project</button>
+							data-target="#myModal">New</button>
+						<button type="button" class="btn btn-success">Save page</button>
 					</h3>
 				</div>
 				<div class="panel-body" style="height: 730px"></div>
@@ -206,6 +203,7 @@ html, body {
 
 			</div>
 		</div>
+
 		<script type="text/javascript">
 			$('.btn-toggle').click(function() {
 				$(this).find('.btn').toggleClass('active');  
@@ -226,7 +224,6 @@ html, body {
 				$(this).find('.btn').toggleClass('btn-default');
 
 			});
-
-		
+</script>
 </body>
 </html>
