@@ -1,5 +1,7 @@
 package com.codezero.app.service;
 
-public class WebpageService {
+public interface WebpageService {
+	
+	public String getURL(String url);
 
 }

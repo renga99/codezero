@@ -8,14 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+import com.codezero.app.service.WebpageService;
 
 @Controller
-@RequestMapping("/")
-public class IndexController {
+@RequestMapping("/home")
+public class HomeController {
+	
+		@Autowired
+		private WebpageService homeService;
+	
+	  	@RequestMapping("/getURL")
+	    public @ResponseBody String getURL(String url) {
+	        return homeService.getURL(url);
+	    }
 
-    @RequestMapping
-    public String getIndexPage() {
-        return "index";
-    }
 }

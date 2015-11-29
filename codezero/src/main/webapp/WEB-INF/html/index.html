@@ -1,31 +1,209 @@
-<!doctype html>
-<html lang="en" ng-app="AngularSpringApp">
+<!DOCTYPE html>
+<html lang="en-US" ng-app="CodezeroApp">
 <head>
-    <meta charset="utf-8">
-    <title>CODEZERO</title>
-    <link rel="stylesheet" href="resources/css/app.css"/>
-    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
+<title>CODEZERO</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+<style type="text/css">
+.navbar {
+	margin-bottom: 0 !important;
+}
+
+body {
+	padding: 45px 0 0 0;
+}
+
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+html, body {
+	height: 100%;
+}
+
+.container, .panel {
+	height: 100%;
+}
+
+.fill {
+	height: 100%;
+	min-height: 100%;
+}
+</style>
 </head>
+
 <body>
-<div id="wrapper">
 
-    <ul class="menu">
-        <li><a href="#/cars">Cars</a></li>
-        <li><a href="#/trains">Trains</a></li>
-        <li><a href="#/railwaystations">Railway Station</a></li>
-    </ul>
-    <hr class="" />
-    <div ng-view></div>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
 
-</div>
+			<a class="navbar-brand pull-left" href="#"><span><img
+					style="max-width: 45px; margin-top: -6px;"
+					src="C:\Users\renga\Desktop\Renga - Branding\logo-black-01.png"></span>CODEZERO
+			</a>
+		</div>
+		<div>
+			<form class="navbar-form pull-left">
+				<label><input type="checkbox" value=""
+					style="margin-left: 5px"> Online/offline</label> <label><input
+					type="checkbox" value="" style="margin-left: 5px"> Selector
+					Pop-up</label> <label><input type="checkbox" value=""
+					style="margin-left: 5px"> Element Pop-up</label> 
+				
+				<input type="url"
+					placeholder="url ex: http://www.axisbank.com/" class="form-control"
+					style="width: 400px; margin-left: 10px" ng-model="urlName" required>
+					
+				<button id="myButton" type="button" style="margin-left: 5px"
+					class="btn btn-primary" ng-disabled="!urlName" ng-click="getURL(urlName)">Go</button>
+					
+				<input type="text" placeholder="cache_item_id" class="form-control"
+					style="width: 200px; margin-left: 10px"> <input type="text"
+					placeholder="db_name ex:sdbcab02" class="form-control"
+					style="width: 200px;">
+			</form>
+			<div class="btn-group btn-toggle"
+				style="margin-left: 15px; margin-top: 10px">
+				<button class="btn btn-xs btn-default">ON</button>
+				<button class="btn btn-xs btn-primary active">OFF</button>
+				<label style="margin-left: 5px">Scrapping mode</label>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>
+						Logout</a></li>
+			</ul>
+		</div>
 
-<script src="resources/js/lib/angular/angular.js"></script>
-<script src="resources/js/app.js"></script>
-<script src="resources/js/services.js"></script>
-<script src="resources/js/controllers/RailwayStationController.js"></script>
-<script src="resources/js/controllers/CarController.js"></script>
-<script src="resources/js/controllers/TrainController.js"></script>
-<script src="resources/js/filters.js"></script>
-<script src="resources/js/directives.js"></script>
+	</div>
+	<div class="row fill">
+		<div class="col-md-2 nopadding ">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="">
+						Projects
+						<button type="button" class="btn btn-primary" data-toggle="modal"
+							data-target="#myModal">New</button>
+						<button type="button" class="btn btn-success">Save page</button>
+					</h3>
+				</div>
+				<div class="panel-body" style="height: 730px"></div>
+			</div>
+		</div>
+		<div class="col-md-8 nopadding">
+			<div class="panel panel-default">
+				<div class="panel-body" style="height: 810px">
+					<iframe frameborder="0" style="width: 100%; height: 100%;"
+						ng-src="{{currentUrl}}"></iframe>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2 nopadding">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="">Agent View</h3>
+				</div>
+				<div class="panel-body" style="height: 730px">
+
+					<ul class="nav nav-pills nopadding">
+						<li class="active"><a data-toggle="pill" href="#menu1">Java</a></li>
+						<li><a data-toggle="pill" href="#menu2">JSON</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="menu1" class="tab-pane fade in active">
+							<p>
+								<code> public class Demo { public static void
+									main(String[] args){ System.out.println("Hello codezero !!"); }
+
+									} </code>
+							</p>
+						</div>
+						<div id="menu2" class="tab-pane fade">
+							<code> { "data" : "Hello codezero !!" } </code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- new project pop up -->
+
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">New Project</h4>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<div class="form-group">
+								<label> Project Name</label> <input type="text"
+									class="form-control" id="usrname" placeholder="Project Name">
+							</div>
+							<button type="submit"
+								class="btn btn-default btn-primary btn-block">Create
+								Project</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('.btn-toggle').click(function() {
+				$(this).find('.btn').toggleClass('active');  
+
+				if ($(this).find('.btn-primary').size()>0) {
+					$(this).find('.btn').toggleClass('btn-primary');
+				}
+				if ($(this).find('.btn-danger').size()>0) {
+					$(this).find('.btn').toggleClass('btn-danger');
+				}
+				if ($(this).find('.btn-success').size()>0) {
+					$(this).find('.btn').toggleClass('btn-success');
+				}
+				if ($(this).find('.btn-info').size()>0) {
+					$(this).find('.btn').toggleClass('btn-info');
+				}
+
+				$(this).find('.btn').toggleClass('btn-default');
+
+			});
+</script>
+
+		<script src="resources/js/app.js"></script>
+		<script src="resources/js/services.js"></script>
+
+		<script src="resources/js/filters.js"></script>
+		<script src="resources/js/directives.js"></script>
 </body>
 </html>
