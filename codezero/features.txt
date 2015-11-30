@@ -1,0 +1,45 @@
+
+Features and modules :
+***********************
+
+Front end:
+
+1.Template engine
+2.command generator
+3.Project manager
+4.Selector executor(css and xpath)
+5.Mutation monitor (Feed elements data to Intelligence)
+6.Tools manager
+7.Script flowchart
+8.Script auto generation
+9.Drag and drop
+
+Backend Utils:
+
+1.Dom clean up util
+	a. javascript download and url rewriting
+	b. Masking utils
+	c. Image download
+	d. page cleanup and document save in mongodb
+	
+
+Backend core:
+
+1. Core engine wrapper
+	 a. command executer return status code or stack trace
+	 b. chrome web driver
+	 c. chrome event listener
+	 d. Intelligence feeder
+	 e. backend manager
+	 f. command filter
+	 g. state queue
+	 h. connection pool
+	 i. Websocket pool
+	 f. Document manager
+
+2. Back end doc DB :
+
+	 a. relational db manager
+	 b. doc db manager (Webpage complete with javascript)
+	 
+	 

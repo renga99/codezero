@@ -2,12 +2,23 @@ package com.codezero.app.service;
 
 import org.springframework.stereotype.Service;
 
-@Service("homeService")
+import com.codezero.app.beans.Webpage;
+
+@Service("WebpageService")
 public class WebpageServiceImpl implements WebpageService {
 
-	public String getURL(String url) {
-		
+	private static String url;
+
+	public String getWebpage() {
 		return url;
 	}
+
+	public void addWebpage(Webpage webpage) {
+		
+		url = webpage.getUrlName();
+
+	}
+
+
 
 }

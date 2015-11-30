@@ -1,0 +1,33 @@
+{
+  "name": "angular-loading-overlay",
+  "homepage": "https://github.com/bsalex/angular-loading-overlay",
+  "authors": [
+    "Alexander Beshchuk <bs.alex.mail@gmail.com>"
+  ],
+  "description": "Service and directive to manipulate overlays on async operations.",
+  "main": "dist/angular-loading-overlay.js",
+  "keywords": [
+    "angular",
+    "loading",
+    "overlay"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "846874ac92c3aa4bf47abf0d99c89faab40c3c54"
+  },
+  "_source": "git://github.com/bsalex/angular-loading-overlay.git",
+  "_target": "~0.2.0",
+  "_originalSource": "angular-loading-overlay",
+  "_direct": true
+}
