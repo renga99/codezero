@@ -1,15 +1,13 @@
 'use strict';
 
-var HomeController = function($scope, $http, bsLoadingOverlayService) {
+var HomeController = function($scope, $http) {
 	
 	$scope.wp = {};
 
     $scope.getWebpage = function() {
-    	$scope.showOverlay();
         $http.get('home/webPage').success(function(urlName){
             $scope.currentWebpage = urlName;
         });
-        $scope.hideOverlay();
     };
 
     $scope.addWebpage = function(wp) {
@@ -22,13 +20,6 @@ var HomeController = function($scope, $http, bsLoadingOverlayService) {
         });
     };
     
-    $scope.showOverlay = function () {
-        bsLoadingOverlayService.start();
-      };
-
-      $scope.hideOverlay = function () {
-        bsLoadingOverlayService.stop();
-      };
       
     $scope.getWebpage();
 };
